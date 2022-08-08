@@ -1,0 +1,33 @@
+{
+  "name": "xcm-index-test",
+  "version": "0.0.4",
+  "description": "Index xcm reserve transfers",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "subql build",
+    "prepack": "rm -rf dist && npm build",
+    "test": "jest",
+    "codegen": "./node_modules/.bin/subql codegen",
+    "docker": "docker-compose pull && docker-compose up",
+    "debug": "node --inspect-brk /usr/local/bin/subql-node -f .",
+    "debug:export": "yarn build && node dist/index.js"
+  },
+  "homepage": "https://github.com/subquery/astar-subql-starter",
+  "repository": "github:subquery/astar-subql-starter",
+  "files": [
+    "dist",
+    "schema.graphql",
+    "project.yaml"
+  ],
+  "author": "willpark",
+  "license": "MIT",
+  "devDependencies": {
+    "@polkadot/api": "^8",
+    "@subql/types": "latest",
+    "typescript": "^4.1.3",
+    "@subql/cli": "latest"
+  },
+  "exports": {
+    "chaintypes": "src/chaintypes.ts"
+  }
+}
